@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sexually transmitted infections simulator (STIsim)",
+    "section": "",
+    "text": "STIsim is an agent-based modeling framework for simulating co-circulating sexually transmitted infections. Built on the Starsim architecture, it supports structured sexual networks, multiple co-transmitting STIs (HIV, syphilis, chlamydia, gonorrhoea, trichomoniasis, BV, and others), risk-stratified populations, and a flexible intervention library covering screening, testing, treatment, and prevention. STIsim is implemented in pure Python (with an R interface via rstarsim), is extensively tested and documented, and runs in seconds to minutes on a laptop.\n\n\n\n\n   Docs  \n\n\n   Tutorials  \n\n\n   Code  \n\n\n   PyPI"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Sexually transmitted infections simulator (STIsim)",
+    "section": "",
+    "text": "STIsim is an agent-based modeling framework for simulating co-circulating sexually transmitted infections. Built on the Starsim architecture, it supports structured sexual networks, multiple co-transmitting STIs (HIV, syphilis, chlamydia, gonorrhoea, trichomoniasis, BV, and others), risk-stratified populations, and a flexible intervention library covering screening, testing, treatment, and prevention. STIsim is implemented in pure Python (with an R interface via rstarsim), is extensively tested and documented, and runs in seconds to minutes on a laptop.\n\n\n\n\n   Docs  \n\n\n   Tutorials  \n\n\n   Code  \n\n\n   PyPI"
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "Sexually transmitted infections simulator (STIsim)",
+    "section": "Installation",
+    "text": "Installation\nSTIsim is most easily installed via PyPI:\npip install stisim\nIt can also be used from R via rstarsim — see r.starsim.org for details."
+  },
+  {
+    "objectID": "index.html#example-models",
+    "href": "index.html#example-models",
+    "title": "Sexually transmitted infections simulator (STIsim)",
+    "section": "Example models",
+    "text": "Example models\nEnd-to-end country analyses built with STIsim are good starting points for understanding how to set up, calibrate, and run real-world models:\n\nhiv_kenya — HIV transmission model for Kenya with structured sexual networks, FSW-targeted and general-population testing, ART, and PrEP. Includes both Python and R interfaces and Optuna-based calibration.\nhiv_zambia — HIV transmission model for Zambia, parallel structure to the Kenya model.\nsyph_dx_zim — Value-of-information analysis of novel syphilis diagnostics in Zimbabwe."
+  },
+  {
+    "objectID": "index.html#publications",
+    "href": "index.html#publications",
+    "title": "Sexually transmitted infections simulator (STIsim)",
+    "section": "Publications",
+    "text": "Publications\nPublications using STIsim include:\n\n\nReduction in overtreatment of gonorrhoea and chlamydia through point-of-care testing compared with syndromic management for vaginal discharge: a modelling study for Zimbabwe (2026). Stuart RM, Newman LM, Manguro G, Dziva Chikwari C, Marks M, Peters RPH, Klein D, Snyder L, Kerr C, Rao DW. Sexually Transmitted Infections. https://doi.org/10.1136/sextrans-2025-056646\nPoint-of-care testing to strengthen sexually transmitted infection case management in resource-constrained settings (2026). Peters RPH, Manguro G, Ong’wen PA, Mdingi MM, Applegate TL, Stuart R, Harding-Esch EM, Manabe YC, Ndowa F, Van Der Pol B. Sexually Transmitted Infections. https://doi.org/10.1136/sextrans-2025-056833\nEstimating the value of novel tests for active syphilis in Zimbabwe: how much overtreatment can be avoided? (2026). Stuart RM, Marks M, Dziva Chikwari C, Muellenmeister AM, Abeysuriya RG, Manguro G, Peters RPH, Rao DW, Newman LM. Sexually Transmitted Diseases (forthcoming)."
+  },
+  {
+    "objectID": "index.html#roadmap",
+    "href": "index.html#roadmap",
+    "title": "Sexually transmitted infections simulator (STIsim)",
+    "section": "Roadmap",
+    "text": "Roadmap\nThe development roadmap is maintained on GitHub Projects."
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Sexually transmitted infections simulator (STIsim)",
+    "section": "Contact",
+    "text": "Contact\nIf you have questions or would like to collaborate, please get in touch.\nEmail Us"
+  }
+]
