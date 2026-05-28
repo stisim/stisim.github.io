@@ -52,15 +52,12 @@ STIsim is most easily installed via [PyPI](https://pypi.org/project/stisim/):
 pip install stisim
 ```
 
-It can also be used from R via [rstarsim](https://github.com/starsimhub/rstarsim) — see [r.starsim.org](https://r.starsim.org) for details.
-
 ## Example models
 
 End-to-end country analyses built with STIsim are good starting points for understanding how to set up, calibrate, and run real-world models:
 
-- [**hiv_kenya**](https://github.com/starsimhub/hiv_kenya) — HIV transmission model for Kenya with structured sexual networks, FSW-targeted and general-population testing, ART, and PrEP. Includes both Python and R interfaces and Optuna-based calibration.
-- [**hiv_zambia**](https://github.com/starsimhub/hiv_zambia) — HIV transmission model for Zambia, parallel structure to the Kenya model.
-- [**syph_dx_zim**](https://github.com/starsimhub/syph_dx_zim) — Value-of-information analysis of novel syphilis diagnostics in Zimbabwe.
+- [**syph_dx_zim**](https://github.com/starsimhub/syph_dx_zim) — Analysis of novel syphilis diagnostics in Zimbabwe.
+- [**stisim_vddx_zim**](https://github.com/starsimhub/stisim_vddx_zim) — Analysis of novel point-of-care diagnostics for vaginal discharge syndrome in Zimbabwe.
 
 ## Publications
 
