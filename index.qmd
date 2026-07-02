@@ -18,7 +18,7 @@ STIsim is an agent-based modeling framework for simulating co-circulating sexual
       </a>
     </li>
     <li style="display:inline; margin: 5px;">
-      <a href="https://docs.stisim.org/tutorials.html" target="_blank">
+      <a href="https://docs.stisim.org/tutorials" target="_blank">
         <button class="btn btn-primary">
           <img src="https://icongr.am/fontawesome/lightbulb-o.svg?size=30&color=ffffff" alt="Tutorials" style="vertical-align:middle;" height="30">
           Tutorials
