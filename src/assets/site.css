@@ -270,6 +270,10 @@ a { color: inherit; }
 .site-footer .grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
 .site-footer .brandcol .mark { margin-bottom: 12px; }
 .site-footer .brandcol p { font-size: 13.5px; color: var(--muted); max-width: 34ch; margin: 0; line-height: 1.55; }
+.site-footer .brandcol .legal { margin-top: 5px; font-size: 12.5px; max-width: 40ch; }
+.site-footer .brandcol .legal a { font-size: inherit; color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.site-footer .brandcol .legal a:hover { color: var(--teal-d); }
+.site-footer .brandcol .legal span { margin: 0 4px; color: var(--line); }
 .site-footer .col { display: flex; flex-direction: column; gap: 9px; }
 .site-footer .h { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
   color: var(--muted); margin-bottom: 3px; }

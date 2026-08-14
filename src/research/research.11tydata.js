@@ -2,7 +2,7 @@
 // derived from `dashboardUrl` and `draft`, never stored: a study with a
 // dashboard links straight out to it and gets no page of its own.
 export default {
-  layout: 'layouts/study.njk',
+  layout: 'study.njk',
   tags: ['study'],
 
   // Schema defaults, mirroring what the validator expects.

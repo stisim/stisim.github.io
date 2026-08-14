@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: base.njk
 modelLinks:
   - [Docs, 'https://docs.stisim.org']
   - [Tutorials, 'https://docs.stisim.org/tutorials']
@@ -11,7 +11,7 @@ filters:
   - [in-flight, In flight]
   - [dashboard, Live dashboards]
 ---
-{% from "partials/components.njk" import spectrum, studyCard %}
+{% from "components.njk" import spectrum, studyCard %}
 
 <section id="model" class="hero">
   <div class="wrap">

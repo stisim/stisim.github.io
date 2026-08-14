@@ -2,9 +2,34 @@ import { validateStudies } from './lib/validate-studies.js';
 
 const statusRank = { published: 0, 'in-flight': 1, upcoming: 2 };
 
+const sitemap = `<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- for page in collections.all %}
+  {%- if page.url %}
+  <url>
+    <loc>{{ site.url }}{{ page.url | url }}</loc>
+  </url>
+  {%- endif %}
+  {%- endfor %}
+</urlset>
+`;
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ public: '.' });
   eleventyConfig.addPassthroughCopy('src/assets');
+
+  // Site metadata, available to every template as `site`
+  eleventyConfig.addGlobalData('site', {
+    title: 'STIsim',
+    description:
+      'Agent-based modelling of co-circulating sexually transmitted infections, including HIV, built on Starsim.',
+    url: process.env.SITE_URL || 'https://stisim.org',
+  });
+
+  eleventyConfig.addTemplate('sitemap.njk', sitemap, {
+    permalink: '/sitemap.xml',
+    eleventyExcludeFromCollections: true,
+  });
 
   // Studies, validated at build time: a malformed entry fails the build
   // instead of shipping broken. Ordering is published, then in-flight, then
@@ -37,8 +62,7 @@ export default function (eleventyConfig) {
     dir: {
       input: 'src',
       output: '_site',
-      includes: '_includes',
-      data: '_data',
+      includes: 'includes',
     },
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}" />
+  <link rel="stylesheet" href="{{ '/assets/site.css' | url }}" />
   <script>
     // Inline and first, so a saved theme applies before the page paints.
     (function () {
@@ -21,11 +21,11 @@
   </script>
 </head>
 <body>
-  {% include "partials/header.njk" %}
+  {% include "header.njk" %}
   <main>
     {{ content | safe }}
   </main>
-  {% include "partials/footer.njk" %}
-  <script src="{{ '/assets/js/site.js' | url }}" defer></script>
+  {% include "footer.njk" %}
+  <script src="{{ '/assets/site.js' | url }}" defer></script>
 </body>
 </html>

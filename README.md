@@ -29,13 +29,12 @@ A publication is just an output with `kind: paper`; the card counts those.
 ## Layout
 
 ```
-eleventy.config.js          collections, filters, passthrough copy
+eleventy.config.js          collections, filters, passthrough copy, site metadata, sitemap
 lib/validate-studies.js     build-time frontmatter schema
 public/                     copied to the site root (CNAME, favicon, logos)
 src/index.njk               the single-page front door: hero, model, research grid
 src/research/*.md           one file per study
-src/_includes/layouts/      base.njk, study.njk
-src/_includes/partials/     header, footer, and the component macros
+src/includes/               base.njk, study.njk, and header, footer, component macros
 src/assets/                 site.css (tokens plus all component styles), site.js
 ```
 
@@ -53,6 +52,6 @@ npx eleventy --pathprefix=/subpath/
 
 ## Notes
 
-- Styling is plain CSS with tokens at the top of `src/assets/css/site.css`, not Tailwind, so the look is bespoke and the dependency list stays at one package.
-- The only client-side JavaScript is the theme toggle and the research filter (`src/assets/js/site.js`), plus a tiny inline script that applies a saved theme before first paint. Page transitions use the browser's native cross-document view transitions where supported, so there is no router.
+- Styling is plain CSS with tokens at the top of `src/assets/site.css`, not Tailwind, so the look is bespoke and the dependency list stays at one package.
+- The only client-side JavaScript is the theme toggle and the research filter (`src/assets/site.js`), plus a tiny inline script that applies a saved theme before first paint. Page transitions use the browser's native cross-document view transitions where supported, so there is no router.
 - Dark mode follows the OS setting via `prefers-color-scheme`, overridable by the toggle and remembered in `localStorage`.
