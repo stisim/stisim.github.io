@@ -1,4 +1,4 @@
-import { validateStudies } from './lib/validate-studies.js';
+import { validateStudies } from './src/research/research-validation.js';
 
 const statusRank = { published: 0, 'in-flight': 1, upcoming: 2 };
 
@@ -16,7 +16,6 @@ const sitemap = `<?xml version="1.0" encoding="utf-8"?>
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ public: '.' });
-  eleventyConfig.addPassthroughCopy('src/assets');
 
   // Site metadata, available to every template as `site`
   eleventyConfig.addGlobalData('site', {

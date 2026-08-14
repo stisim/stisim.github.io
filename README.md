@@ -13,7 +13,7 @@ npm run serve      # serve the built ./_site
 
 ## Add or edit a study
 
-Every study is one file in `src/research/`. Frontmatter is validated at build time by `lib/validate-studies.js`, so a malformed entry fails the build instead of shipping broken. Defaults for the optional fields live in `src/research/research.11tydata.js`.
+Every study is one file in `src/research/`. Frontmatter is validated at build time by `src/research/research-validation.js`, so a malformed entry fails the build instead of shipping broken. Defaults for the optional fields live in `src/research/research.11tydata.js`.
 
 Card behaviour is derived, never stored:
 
@@ -30,12 +30,10 @@ A publication is just an output with `kind: paper`; the card counts those.
 
 ```
 eleventy.config.js          collections, filters, passthrough copy, site metadata, sitemap
-lib/validate-studies.js     build-time frontmatter schema
-public/                     copied to the site root (CNAME, favicon, logos)
+public/                     copied to the site root: site.css, site.js, CNAME, favicon, logos
 src/index.njk               the single-page front door: hero, model, research grid
-src/research/*.md           one file per study
+src/research/*.md           one file per study, with the frontmatter schema alongside
 src/includes/               base.njk, study.njk, and header, footer, component macros
-src/assets/                 site.css (tokens plus all component styles), site.js
 ```
 
 ## Deploy to GitHub Pages
@@ -52,6 +50,6 @@ npx eleventy --pathprefix=/subpath/
 
 ## Notes
 
-- Styling is plain CSS with tokens at the top of `src/assets/site.css`, not Tailwind, so the look is bespoke and the dependency list stays at one package.
-- The only client-side JavaScript is the theme toggle and the research filter (`src/assets/site.js`), plus a tiny inline script that applies a saved theme before first paint. Page transitions use the browser's native cross-document view transitions where supported, so there is no router.
+- Styling is plain CSS with tokens at the top of `public/site.css`, not Tailwind, so the look is bespoke and the dependency list stays at one package.
+- The only client-side JavaScript is the theme toggle and the research filter (`public/site.js`), plus a tiny inline script that applies a saved theme before first paint. Page transitions use the browser's native cross-document view transitions where supported, so there is no router.
 - Dark mode follows the OS setting via `prefers-color-scheme`, overridable by the toggle and remembered in `localStorage`.
