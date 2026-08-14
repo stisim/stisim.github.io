@@ -25,8 +25,8 @@
   --ok-bg: #e4efe9; --ok-tx: #2c6e63;
   --fly-bg: #f6ebdd; --fly-tx: #9a5a17;
 
-  --font-display: "Space Grotesk", system-ui, sans-serif;
-  --font-body: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  --font-display: "Raleway", system-ui, sans-serif;
+  --font-body: "Raleway", system-ui, -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 
   --r: 14px;
