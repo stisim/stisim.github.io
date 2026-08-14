@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
-    "preview": "npx --yes http-server _site -p 8080"
+    "serve": "npx --yes http-server _site -p 8081"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.0"

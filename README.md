@@ -8,7 +8,7 @@ Public front door for STIsim: a static [Eleventy](https://www.11ty.dev) site tha
 npm install
 npm run dev        # http://localhost:8080, with live reload
 npm run build      # static output to ./_site
-npm run preview    # serve the built ./_site
+npm run serve      # serve the built ./_site
 ```
 
 ## Add or edit a study
