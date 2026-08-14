@@ -14,29 +14,10 @@ filters:
 {% from "partials/components.njk" import spectrum, studyCard %}
 
 <section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">agent-based STI + HIV modelling · built on Starsim</p>
+    <p class="eyebrow">Agent-based STI + HIV modeling · Built on Starsim</p>
     <h1>STIsim</h1>
     <p class="lede">
-      A simulator for sexually transmitted infections the way they actually spread:
-      several at once, across structured sexual networks, with HIV in the mix.
-      Model gonorrhoea, chlamydia, trichomoniasis, BV, syphilis, and HIV together,
-      then test screening, diagnosis, treatment, and prevention.
-    </p>
-    <div class="spec">{{ spectrum(true) }}</div>
-    <div class="cta">
-      <a class="btn primary" href="#model">Use the model</a>
-      <a class="btn" href="#research">See the research</a>
-    </div>
-    <p class="pip"><span>pip install stisim</span><em>only modelling HIV? <span>pip install hivsim</span></em></p>
-  </div>
-</section>
-
-<section id="model" class="sec">
-  <div class="wrap">
-    <p class="kicker">The model</p>
-    <p class="over">
-      STIsim is an agent-based modelling framework for simulating co-circulating
+      STIsim is an agent-based modeling framework for simulating co-circulating
       sexually transmitted infections. Built on the Starsim architecture, it supports
       structured sexual networks, multiple co-transmitting infections
       (HIV, syphilis, chlamydia, gonorrhoea, trichomoniasis, BV, and others),
@@ -46,12 +27,8 @@ filters:
     </p>
     <div class="installs">
       <div class="inst">
-        <span class="lbl">Full STI + HIV suite</span>
+        <span class="lbl">Installation</span>
         <code>pip install stisim</code>
-      </div>
-      <div class="inst">
-        <span class="lbl">HIV only</span>
-        <code>pip install hivsim</code>
       </div>
     </div>
     <div class="arch">
