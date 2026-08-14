@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+modelLinks:
+  - [Docs, 'https://docs.stisim.org']
+  - [Tutorials, 'https://docs.stisim.org/tutorials']
+  - [Examples gallery, 'https://docs.stisim.org/examples/']
+  - [Roadmap, 'https://github.com/orgs/starsimhub/projects/26']
+filters:
+  - [all, All]
+  - [published, Published]
+  - [in-flight, In flight]
+  - [dashboard, Live dashboards]
+---
+{% from "partials/components.njk" import spectrum, studyCard %}
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">agent-based STI + HIV modelling · built on Starsim</p>
+    <h1>STIsim</h1>
+    <p class="lede">
+      A simulator for sexually transmitted infections the way they actually spread:
+      several at once, across structured sexual networks, with HIV in the mix.
+      Model gonorrhoea, chlamydia, trichomoniasis, BV, syphilis, and HIV together,
+      then test screening, diagnosis, treatment, and prevention.
+    </p>
+    <div class="spec">{{ spectrum(true) }}</div>
+    <div class="cta">
+      <a class="btn primary" href="#model">Use the model</a>
+      <a class="btn" href="#research">See the research</a>
+    </div>
+    <p class="pip"><span>pip install stisim</span><em>only modelling HIV? <span>pip install hivsim</span></em></p>
+  </div>
+</section>
+
+<section id="model" class="sec">
+  <div class="wrap">
+    <p class="kicker">The model</p>
+    <p class="over">
+      STIsim is an agent-based modelling framework for simulating co-circulating
+      sexually transmitted infections. Built on the Starsim architecture, it supports
+      structured sexual networks, multiple co-transmitting infections
+      (HIV, syphilis, chlamydia, gonorrhoea, trichomoniasis, BV, and others),
+      risk-stratified populations, and a flexible intervention library spanning
+      screening, testing, treatment, and prevention. It is implemented in pure
+      Python, extensively tested and documented, and runs in seconds to minutes on a laptop.
+    </p>
+    <div class="installs">
+      <div class="inst">
+        <span class="lbl">Full STI + HIV suite</span>
+        <code>pip install stisim</code>
+      </div>
+      <div class="inst">
+        <span class="lbl">HIV only</span>
+        <code>pip install hivsim</code>
+      </div>
+    </div>
+    <div class="arch">
+      <span class="base">base · networks · demographics · interventions</span>
+      {{ spectrum() }}
+      <span class="mods">modules · one per infection, plus disease-specific care</span>
+    </div>
+    <div class="links">
+      {% for link in modelLinks %}
+      <a href="{{ link[1] }}" target="_blank" rel="noopener">{{ link[0] }} <i>↗</i></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="research" class="sec">
+  <div class="wrap">
+    <p class="kicker">Research</p>
+    <p class="sub">What has been done with the model, and what is under way.</p>
+    <div class="chips" role="tablist">
+      {% for f in filters %}
+      <button class="chip{{ ' on' if loop.first }}" data-f="{{ f[0] }}">{{ f[1] }}</button>
+      {% endfor %}
+    </div>
+    <div class="grid">
+      {% for study in collections.studies %}{{ studyCard(study) }}{% endfor %}
+    </div>
+  </div>
+</section>

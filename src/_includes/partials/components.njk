@@ -1,0 +1,53 @@
+{#
+  Shared UI pieces. Everything here is presentational: the caller passes data,
+  the macro decides nothing that isn't derivable from it.
+#}
+
+{% macro spectrum(animate=false) %}
+<div class="spectrum{% if animate %} animate{% endif %}" role="presentation">
+  {% for band in ['ng', 'ct', 'tv', 'bv', 'syph', 'hiv'] %}<span style="background:var(--{{ band }})"></span>{% endfor %}
+</div>
+{% endmacro %}
+
+{% macro pathogenTag(code) %}
+{% set k = code | lower %}
+<span class="tag" style="background:var(--{{ k }}-bg);color:var(--{{ k }}-tx)">{{ code }}</span>
+{% endmacro %}
+
+{% macro statusPill(status, live=false) %}
+{% set labels = { published: 'Published', 'in-flight': 'In flight', upcoming: 'Upcoming' } %}
+{% if live %}
+<span class="pill live">Live</span>
+{% else %}
+<span class="pill {{ 'ok' if status == 'published' else 'fly' }}">{{ labels[status] }}</span>
+{% endif %}
+{% endmacro %}
+
+{#
+  A study with a dashboard is a live-dashboard card that links straight out to
+  it; anything else is a writeup card linking to its own page.
+#}
+{% macro studyCard(study) %}
+{% set d = study.data %}
+{% set isDash = d.dashboardUrl %}
+{% set papers = d.outputs | countPapers %}
+<a class="card" href="{{ d.dashboardUrl if isDash else (study.url | url) }}"
+   data-filter="{{ 'dashboard' if isDash else d.status }}"
+   {% if isDash %}target="_blank" rel="noopener"{% endif %}>
+  <div class="row">
+    <span class="code">{{ d.code }}</span>
+    {{ statusPill(d.status, isDash) }}
+  </div>
+  <h3 style="view-transition-name: t-{{ d.slug }}">{{ d.title }}</h3>
+  <p class="blurb">{{ d.lead }}</p>
+  <div class="tags">{% for p in d.pathogens %}{{ pathogenTag(p) }}{% endfor %}</div>
+  <div class="foot">
+    {% if isDash %}
+      <span class="act accent">Open dashboard <i>↗</i></span>
+    {% else %}
+      <span class="act">Read writeup <i>→</i></span>
+      {% if papers %}<span class="papers">{{ papers }} {{ 'paper' if papers == 1 else 'papers' }}</span>{% endif %}
+    {% endif %}
+  </div>
+</a>
+{% endmacro %}
