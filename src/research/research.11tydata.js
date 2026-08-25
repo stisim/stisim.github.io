@@ -1,6 +1,6 @@
 // Directory data for the studies in this folder. Card and page behaviour is
 // derived from `dashboardUrl` and `draft`, never stored: a study with a
-// dashboard links straight out to it and gets no page of its own.
+// dashboardUrl links straight out to it and gets no page of its own.
 export default {
   layout: 'study.njk',
   tags: ['study'],

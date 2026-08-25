@@ -2,7 +2,7 @@
 layout: base.njk
 ---
 {% from "components.njk" import pathogenTag, statusPill %}
-{% set findingsLabel = "Key findings" if status == "published" else "What we're tracking" %}
+{% set findingsLabel = "Key findings" if status == "peer-reviewed" else "What we're tracking" %}
 
 <article class="paper">
   <div class="wrap">

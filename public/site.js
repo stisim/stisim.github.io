@@ -21,7 +21,8 @@ chips.forEach(function (chip) {
     });
     var f = chip.dataset.f;
     cards.forEach(function (card) {
-      card.style.display = f === 'all' || card.dataset.filter === f ? 'flex' : 'none';
+      var filters = card.dataset.filter.split(' ');
+      card.style.display = f === 'all' || filters.indexOf(f) !== -1 ? 'flex' : 'none';
     });
   });
 });

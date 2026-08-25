@@ -1,7 +1,7 @@
 ---
 code: STI-NOTIFY
 title: Partner notification scenarios
-status: in-flight
+status: write-up
 order: 0
 lead: An interactive scenario explorer for STI partner-notification strategies.
 pathogens: [NG, CT, TV, SYPH]
