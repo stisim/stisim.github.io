@@ -1,6 +1,6 @@
 import { validateStudies } from './src/research/research-validation.js';
 
-const statusRank = { published: 0, 'in-flight': 1, upcoming: 2 };
+const statusRank = { 'peer-reviewed': 0, 'write-up': 1, 'in-flight': 2 };
 
 const sitemap = `<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -31,8 +31,8 @@ export default function (eleventyConfig) {
   });
 
   // Studies, validated at build time: a malformed entry fails the build
-  // instead of shipping broken. Ordering is published, then in-flight, then
-  // upcoming, and by `order` within each group.
+  // instead of shipping broken. Ordering is peer-reviewed, then write-up, then
+  // in-flight, and by `order` within each group.
   eleventyConfig.addCollection('studies', (collectionApi) => {
     const studies = collectionApi
       .getFilteredByTag('study')

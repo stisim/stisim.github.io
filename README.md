@@ -17,14 +17,13 @@ Every study is one file in `src/research/`. Frontmatter is validated at build ti
 
 Card behaviour is derived, never stored:
 
-| `dashboardUrl` | `status`   | Renders as          | Click target       | Study page? |
-| -------------- | ---------- | ------------------- | ------------------ | ----------- |
-| set            | any        | Live-dashboard card | the external URL   | no          |
-| unset          | published  | Writeup card        | /research/{slug}/  | yes         |
-| unset          | in-flight  | Writeup card        | /research/{slug}/  | yes         |
-| unset          | upcoming   | Writeup card        | /research/{slug}/  | yes         |
+| `dashboardUrl` | `status`      | Renders as     | Click target       | Study page? |
+| -------------- | ------------- | -------------- | ------------------- | ----------- |
+| set            | write-up      | Write-up card  | the external URL    | no          |
+| unset          | peer-reviewed | Writeup card   | /research/{slug}/   | yes         |
+| unset          | in-flight     | Writeup card   | /research/{slug}/   | yes         |
 
-A publication is just an output with `kind: paper`; the card counts those.
+`status: write-up` and `dashboardUrl` always go together (enforced at build time) — it's for studies whose only public output is a standalone external page, not a journal paper. Each output with `kind: paper` counts toward the paper count shown on the card.
 
 ## Layout
 
