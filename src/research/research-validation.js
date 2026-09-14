@@ -3,7 +3,7 @@
 // throwing here fails the build rather than shipping a broken card.
 
 const PATHOGENS = ['NG', 'CT', 'TV', 'BV', 'SYPH', 'HIV'];
-const STATUSES = ['published', 'in-flight', 'upcoming'];
+const STATUSES = ['peer-reviewed', 'write-up', 'in-flight'];
 const OUTPUT_KINDS = ['paper', 'slides', 'code', 'dataset', 'other'];
 
 const isString = (v) => typeof v === 'string' && v.length > 0;
@@ -65,13 +65,17 @@ export function validateStudies(studies) {
 
     if (d.dashboardUrl !== undefined && !isUrl(d.dashboardUrl))
       fail(`\`dashboardUrl\` (${d.dashboardUrl}) is not a URL`);
+    if (d.status === 'write-up' && d.dashboardUrl === undefined)
+      fail('`status: write-up` requires `dashboardUrl` to be set');
+    if (d.dashboardUrl !== undefined && d.status !== 'write-up')
+      fail('`dashboardUrl` requires `status: write-up`');
 
     if (!Array.isArray(d.related)) {
       fail('`related` must be an array');
     } else {
       for (const slug of d.related) {
         if (!slugs.has(slug))
-          fail(`\`related\` points at \`${slug}\`, which is not a published study`);
+          fail(`\`related\` points at \`${slug}\`, which is not a known study`);
       }
     }
   }

@@ -1,7 +1,7 @@
 ---
 code: SYPH-DX
 title: Two new syphilis diagnostics
-status: published
+status: peer-reviewed
 order: 2
 lead: >-
   Evaluation of two new syphilis diagnostics: one detecting syphilis from genital

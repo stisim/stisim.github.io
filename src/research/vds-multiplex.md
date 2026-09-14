@@ -1,7 +1,7 @@
 ---
 code: VDS-MULTIPLEX
 title: Multiplex panel for vaginal discharge syndrome
-status: published
+status: peer-reviewed
 order: 1
 lead: >-
   Evaluation of a multiplex panel that gives an etiological diagnosis of vaginal
